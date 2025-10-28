@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Mis 15 Gabriela </title>
+  
+  <style>
+    body { <!-- Fondo Principal -->
+      font-family: 'Georgia', serif;
+      background-color: #CAEDFA;
+      color: #5a3e36;
+      text-align: center;
+      padding: 3rem;
+    }
+    .card {
+	  position: relative; /* ¡clave! esto hará que la flor se quede dentro */
+      background-color: #7CDEF2;
+      border: 4px solid #0F39F5;
+      border-radius: 20px;
+      padding: 2rem;
+      max-width: 600px;
+      margin: auto;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+	  z-index: 2; /* Asegura que el texto esté por encima */
+    }
+	  .flor-superior {
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      width: 1px;
+      z-index: 1;
+    }
+		.flor-med {
+      position: absolute;
+      top: 370px;
+      left: 180px;
+      width: 1px;
+      z-index: 1;
+    }
+		.flor-cora {
+      position: absolute;
+      top: 690px;
+      left: 230px;
+      width: 1px;
+      z-index: 1;
+    }
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+    p {
+      font-size: 1.2rem;
+    }
+    .button {
+      background-color: #A79E90;
+      color: black;
+	  font-family: Georgia;
+      padding: 1rem 2rem;
+      border: none;
+      border-radius: 15px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      margin-top: 1rem;
+    }
+    iframe {
+      width: 100%;
+      height: 250px;
+      border: none;
+      margin-top: 1rem;
+      border-radius: 10px;
+    }
+    #countdown {
+      font-weight: bold;
+      font-size: 1.5rem;
+      margin-top: 1rem;
+      color: #8b5e3c;
+    }
+   
+  </style>
+</head>
+<body>
+
+	
+  <div class="card">
+  <div class="contenedor">
+    <!-- Imagen floral dentro del fondo rosa -->
+    <img src="480e4464055ca54bddf5f92ae2ed4579.png" style="width: 150px; height: auto;" class="flor-superior" alt="Decoración floral">
+	
+	<iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/4GK7t6qb5s18nkNBQWAXv4?utm_source=generator" width="10%" height="50" 
+		frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+	
+	
+	<h1 style="font-size: px; font-family: 'Trebuchet MS';  z-index: 2; "> <br><br>Mis Quince años</h1>
+	
+	<p style="font-size: 28px; font-style: italic; font-weight: bold;">
+	 <br>Gabriela <br>
+	</p>
+	
+	<img src="4fbcf2ec2f4c02fe954f9bae2b2d45df.png" style="width: 320px; height: 800;" class="flor-med" alt="flor dos">
+    <p style="font-size: 25px;">
+	<br> <br> <br><br><br> <br> <em>"Nunca se trató de cambiarnos desde cero..... <br> Ganar, No perder.... <br> Te amo como sea, donde sea, como sea, cuando sea tambien."</em>
+	</p>
+	
+	<img src="0496e2f2d31c2c9f88cc8841673e6e25.png" style="width: 220px; height: auto;" class="flor-cora" alt="flor dos">
+     <p style="font-size: 22px;">
+	<br> <br> <br><br><br> <br><br><br> <br> Nos encantaría contar con tu presencia para celebrar este momento tan especial
+	</p>
+	
+	<p style="font-size: 22px;">
+	Ceremonia y Recepcion <br>
+	
+	<strong>📍 "Los Catrines" <br> Jardin de Eventos <br> Carretera Matehuala 1306 Col Las Higueras <br> Soledad de Graciano Sánchez</strong></p> 
+	<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3039.9361174823594!2d-100.9349027!3d22.1983214!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842aa1bdff10bcd1%3A0x4bea65eb855be275!2sLos%20Catrines%20Jardin%20de%20Eventos!5e1!3m2!1ses-419!2smx!4v1751329959228!5m2!1ses-419!2smx" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+	
+	
+	<p style="font-size: 22px;">
+	Fecha y Hora 
+	
+	<strong> <br>18 de Diciembre 2025 <br> 7:00 PM </strong>
+	</p>
+
+
+    <div id="countdown"></div>
+
+
+    <button class="button" onclick="confirmarAsistencia()">Confirmar asistencia por WhatsApp</button>
+
+	</div>
+  </div>
+
+  <script>
+    function confirmarAsistencia() {
+      const mensaje = encodeURIComponent("¡Hola! Confirmo mi asistencia a su boda 💕");
+      window.open("https://wa.me/524441800009?text=" + mensaje, "_blank");
+    }
+
+    const fechaEvento = new Date("2025-10-30T18:00:00").getTime();
+    const countdown = setInterval(() => {
+      const ahora = new Date().getTime();
+      const distancia = fechaEvento - ahora;
+
+      const dias = Math.floor(distancia / (1000 * 60 * 60 * 24));
+      const horas = Math.floor((distancia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutos = Math.floor((distancia % (1000 * 60 * 60)) / (1000 * 60));
+      const segundos = Math.floor((distancia % (1000 * 60)) / 1000);
+
+      document.getElementById("countdown").innerHTML =
+        `⏳ Faltan ${dias} días, ${horas} hrs, ${minutos} min, ${segundos} seg`;
+
+      if (distancia < 0) {
+        clearInterval(countdown);
+        document.getElementById("countdown").innerHTML = "¡Ya comenzó la boda! 🎉";
+      }
+    }, 1000);
+  </script>
+</body>
+</html>
